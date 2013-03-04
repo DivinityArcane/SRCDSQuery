@@ -40,7 +40,7 @@ namespace SRCDSQuery
             }
         }
 
-        public ServerQuery (String hoststring)
+        public ServerQuery (String hoststring, Double timeout = 1)
         {
             try
             {
@@ -54,7 +54,7 @@ namespace SRCDSQuery
                 }
                 else _host = hoststring;
 
-                _sock = new DSSocket(_host, _port);
+                _sock = new DSSocket(_host, _port, timeout);
 
                 this.pinged = Environment.TickCount;
 

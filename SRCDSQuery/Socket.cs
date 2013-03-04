@@ -28,7 +28,7 @@ namespace SRCDSQuery
             }
         }
 
-        public DSSocket (String host, Int32 port, Int16 timeout = 5)
+        public DSSocket (String host, Int32 port, Double timeout = 5)
         {
             try
             {
