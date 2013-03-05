@@ -48,5 +48,17 @@ namespace SRCDSQuery
             dpack.Write(chal);
             return dpack.Finalize();
         }
+
+        public static byte[] GetRules (int chal)
+        {
+            Packet dpack = new Packet();
+            dpack.Write((byte)0xFF);
+            dpack.Write((byte)0xFF);
+            dpack.Write((byte)0xFF);
+            dpack.Write((byte)0xFF);
+            dpack.Write((byte)PacketType.A2S_RULES);
+            dpack.Write(chal);
+            return dpack.Finalize();
+        }
     }
 }

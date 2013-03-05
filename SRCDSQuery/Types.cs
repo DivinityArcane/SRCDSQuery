@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 
 namespace SRCDSQuery
 {
@@ -60,6 +61,7 @@ namespace SRCDSQuery
         Linux = (byte)'l',
     }
 
+    [StructLayout(LayoutKind.Sequential, Pack = 0)]
     public struct ServerInfo
     {
         public Byte Protocol;
@@ -90,6 +92,7 @@ namespace SRCDSQuery
         public Int64 GameID;
     }
 
+    [StructLayout(LayoutKind.Sequential, Pack = 0)]
     public struct PlayerInfo
     {
         public String Name;
@@ -97,9 +100,24 @@ namespace SRCDSQuery
         public Single Online;
     }
 
+    [StructLayout(LayoutKind.Sequential, Pack = 0)]
     public struct PlayerList
     {
         public Byte Count;
         public List<PlayerInfo> Data;
+    }
+
+    [StructLayout(LayoutKind.Sequential, Pack = 0)]
+    public struct Cvar
+    {
+        public String Name;
+        public String Value;
+    }
+
+    [StructLayout(LayoutKind.Sequential, Pack = 0)]
+    public struct CvarList
+    {
+        public Int16 Count;
+        public List<Cvar> Data;
     }
 }
