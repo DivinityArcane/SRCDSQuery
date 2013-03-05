@@ -163,7 +163,14 @@ namespace SRCDSQuery
                 }
             }
 
-            else if (T == typeof(Int32) || T == typeof(UInt32) || T == typeof(Single))
+            else if (T == typeof(Single))
+            {
+                R ret = (R)Convert.ChangeType(System.BitConverter.ToSingle(this.buffer, this.location), T);
+                this.location += 4;
+                return ret;
+            }
+
+            else if (T == typeof(Int32) || T == typeof(UInt32))
             {
                 if (this.CheckBounds(4, T.Name))
                 {
@@ -180,7 +187,14 @@ namespace SRCDSQuery
                 }
             }
 
-            else if (T == typeof(Int64) || T == typeof(UInt64) || T == typeof(Double))
+            else if (T == typeof(Double))
+            {
+                R ret = (R)Convert.ChangeType(System.BitConverter.ToDouble(this.buffer, this.location), T);
+                this.location += 8;
+                return ret;
+            }
+
+            else if (T == typeof(Int64) || T == typeof(UInt64))
             {
                 if (this.CheckBounds(8, T.Name))
                 {

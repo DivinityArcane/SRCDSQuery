@@ -95,7 +95,7 @@ namespace SRCDSQuery
                                 {
                                     Name = pack.Read<String>(),
                                     Score = pack.Read<Int32>(),
-                                    Online = pack.Read<Single>()
+                                    Online = pack.Read<Single>(),
                                 };
 
                                 this.players.Data.Add(info);

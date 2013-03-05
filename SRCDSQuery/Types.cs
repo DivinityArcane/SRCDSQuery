@@ -94,7 +94,7 @@ namespace SRCDSQuery
     {
         public String Name;
         public Int32 Score;
-        public Double Online;
+        public Single Online;
     }
 
     public struct PlayerList

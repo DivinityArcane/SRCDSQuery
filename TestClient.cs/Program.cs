@@ -7,7 +7,8 @@ namespace TestClient.cs
     {
         static void Main (string[] args)
         {
-            var hs = "74.91.123.66:27015";
+            var hs = "68.232.161.43:27015";
+            DateTime Epoch = new DateTime(1970, 1, 1);
             try
             {
                 ServerQuery query = new ServerQuery(hs);
