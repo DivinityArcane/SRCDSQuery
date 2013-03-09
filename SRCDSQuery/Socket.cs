@@ -92,8 +92,12 @@ namespace SRCDSQuery
             }
             catch { }
 
-            Array.Clear(_buffer, 0, _buffer.Length);
-            _sock.BeginReceive(_buffer, 0, _buffer.Length, SocketFlags.None, new AsyncCallback(on_receive), null);
+            try
+            {
+                Array.Clear(_buffer, 0, _buffer.Length);
+                _sock.BeginReceive(_buffer, 0, _buffer.Length, SocketFlags.None, new AsyncCallback(on_receive), null);
+            }
+            catch { }
         }
 
         private void on_sent (IAsyncResult result)
