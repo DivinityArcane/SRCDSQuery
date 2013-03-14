@@ -32,7 +32,7 @@ namespace SRCDSQuery
         {
             try
             {
-                _sock = new Socket(SocketType.Dgram, ProtocolType.Udp);
+                _sock = new Socket(AddressFamily.InterNetwork, SocketType.Dgram, ProtocolType.Udp);
 
                 if (_sock == null)
                     throw new Exception("Unable to create UDB socket.");
